@@ -1,0 +1,24 @@
+{
+  "name": "githubactions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/**",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reckmeyerm/githubactions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reckmeyerm/githubactions/issues"
+  },
+  "homepage": "https://github.com/reckmeyerm/githubactions#readme",
+  "devDependencies": {
+    "eslint": "^8.30.0"
+  }
+}
