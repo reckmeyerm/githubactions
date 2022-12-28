@@ -6,6 +6,10 @@ inputs:
     description: "BUILD_ID"
     required: true
 
+  API_SECRET:
+    description: "API_SECRET"
+    required: true
+
 runs:
   using: "composite"
   steps:
@@ -13,11 +17,11 @@ runs:
       shell: bash
       run: |
           touch build.tar.gz
-          echo "VERSION ${{inputs.BUILD_ID}}" >> build.tar.gz
-          echo "API_SECRET=$API_SECRET" >> build.tar.gz
+          echo "VERSION ${{ inputs.BUILD_ID }}" >> build.tar.gz
+          echo "API_SECRET=${{ inputs.API_SECRET }}" >> build.tar.gz
           ls -la
 
     - uses: actions/upload-artifact@v3
       with:
-        name: build.${{inputs.BUILD_ID}}.tar.gz
+        name: build.${{ inputs.BUILD_ID }}.tar.gz
         path: ./build.tar.gz

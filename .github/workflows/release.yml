@@ -2,9 +2,6 @@ name: Release
 
 on: workflow_dispatch
 
-env:
-    API_SECRET: ${{secrets.API_SECRET}}
-
 jobs:
   assignVersion:
     name: assign version
@@ -29,6 +26,7 @@ jobs:
       - uses: ./.github/actions/build
         with:
           BUILD_ID: DE
+          API_SECRET: ${{ secrets.API_SECRET }}
 
   deployAT:
     name: deploy at
