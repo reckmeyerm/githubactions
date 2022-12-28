@@ -22,16 +22,9 @@ jobs:
     environment: Production-DE
 
     steps:
-      - run: |
-          touch build.de.tar.gz
-          echo "VERSION DE" >> build.de.tar.gz
-          echo "API_SECRET=${{secrets.API_SECRET}}" >> build.de.tar.gz
-          ls -la
-
-      - uses: actions/upload-artifact@v3
+      - uses: ./.github/actions/build
         with:
-          name: build.de.tar.gz
-          path: ./build.de.tar.gz
+          BUILD_ID: DE
 
   deployAT:
     name: deploy at
@@ -40,13 +33,7 @@ jobs:
     environment: Production-AT
 
     steps:
-      - run: |
-          touch build.at.tar.gz
-          echo "VERSION AT" >> build.at.tar.gz
-          echo "API_SECRET=${{secrets.API_SECRET}}" >> build.at.tar.gz
-          ls -la
-
-      - uses: actions/upload-artifact@v3
+      - uses: ./.github/actions/build
         with:
-          name: build.at.tar.gz
-          path: ./build.at.tar.gz
+          BUILD_ID: AT
+
