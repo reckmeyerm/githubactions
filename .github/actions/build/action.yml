@@ -14,7 +14,7 @@ runs:
       run: |
           touch build.tar.gz
           echo "VERSION ${{inputs.BUILD_ID}}" >> build.tar.gz
-          echo "API_SECRET=${{secrets.API_SECRET}}" >> build.tar.gz
+          echo "API_SECRET=$API_SECRET" >> build.tar.gz
           ls -la
 
     - uses: actions/upload-artifact@v3
