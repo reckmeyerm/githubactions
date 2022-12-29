@@ -10,6 +10,10 @@ inputs:
     description: "API_SECRET"
     required: true
 
+  DRY_RUN:
+    description: "DRY_RUN"
+    required: true
+
 runs:
   using: "composite"
   steps:
@@ -22,6 +26,7 @@ runs:
           ls -la
 
     - uses: actions/upload-artifact@v3
+      if: ${{ inputs.DRY_RUN }} == 'false'
       with:
         name: build.${{ inputs.BUILD_ID }}.tar.gz
         path: ./build.tar.gz

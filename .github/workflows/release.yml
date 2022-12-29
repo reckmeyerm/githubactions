@@ -36,6 +36,7 @@ jobs:
         with:
           BUILD_ID: DE
           API_SECRET: ${{ secrets.API_SECRET }}
+          DRY_RUN: ${{ github.event.inputs.dryRun }}
 
   deployAT:
     name: deploy at
@@ -49,3 +50,5 @@ jobs:
         with:
           BUILD_ID: AT
           API_SECRET: ${{ secrets.API_SECRET }}
+          DRY_RUN: ${{ github.event.inputs.dryRun }}
+
