@@ -5,7 +5,7 @@ on:
     inputs:
       dryRun:         
         description: 'Log level'     
-        required: true
+        required: false
         default: 'false'
 
 jobs:
