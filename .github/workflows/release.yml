@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       dryRun:         
-        description: 'Log level'     
+        description: 'dryRun'     
         required: false
         default: 'false'
 
