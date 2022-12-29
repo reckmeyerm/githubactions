@@ -10,8 +10,8 @@ inputs:
     description: "API_SECRET"
     required: true
 
-  DRY_RUN:
-    description: "DRY_RUN"
+  IS_DRY_RUN:
+    description: "IS_DRY_RUN"
     required: true
 
 runs:
