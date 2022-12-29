@@ -1,6 +1,12 @@
 name: Release
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      dryRun:         
+        description: 'Log level'     
+        required: true
+        default: 'false'
 
 jobs:
   assignVersion:
@@ -8,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: |
+          echo workflow input dryRun: ${{ github.event.inputs.dryRun }}
+
       - name: Checkout code
         uses: actions/checkout@v3
 
