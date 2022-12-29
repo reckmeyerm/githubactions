@@ -3,8 +3,8 @@ name: Release
 on: 
   workflow_dispatch:
     inputs:
-      dryRun:         
-        description: 'dryRun'
+      isDryRun:         
+        description: 'isDryRun'
         type: boolean
         default: false
 
@@ -14,9 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: |
-          echo workflow input dryRun: ${{ github.event.inputs.dryRun }}
-
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -50,5 +47,5 @@ jobs:
         with:
           BUILD_ID: AT
           API_SECRET: ${{ secrets.API_SECRET }}
-          DRY_RUN: ${{ github.event.inputs.dryRun }}
+          IS_DRY_RUN: ${{ github.event.inputs.isDryRun }}
 
