@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       dryRun:         
-        description: 'dryRun'     
-        required: false
-        default: 'false'
+        description: 'dryRun'
+        type: boolean
+        default: false
 
 jobs:
   assignVersion:
