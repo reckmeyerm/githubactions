@@ -12,7 +12,7 @@ jobs:
   assignVersion:
     name: assign version
     runs-on: ubuntu-latest
-
+    if: ${{ github.event.inputs.isDryRun == false }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
