@@ -18,15 +18,16 @@ jobs:
         if: true
         run: |
           echo foobar
+
       - name: alway falsy step
         if: false
         run: |
           echo foobar
 
-      - if: ${{ github.event.inputs.value == true }}
+      - if: ${{ github.event.inputs.value }}
         run: |
           echo input is truthy
 
-      - if: ${{ github.event.inputs.value == false }}
+      - if: ${{ ! github.event.inputs.value }}
         run: |
           echo input is falsy
