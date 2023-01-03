@@ -1,0 +1,19 @@
+name: Release
+
+on: 
+  workflow_dispatch:
+    inputs:
+      value:         
+        description: 'value'
+        type: boolean
+        default: false
+
+jobs:
+  checkValue:
+    - if: ${{ github.event.inputs.value == true }}
+      run: |
+        echo input is truthy
+
+    - if: ${{ github.event.inputs.value == false }}
+      run: |
+        echo input is falsy
