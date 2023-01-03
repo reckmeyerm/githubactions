@@ -10,10 +10,14 @@ on:
 
 jobs:
   checkValue:
-    - if: ${{ github.event.inputs.value == true }}
-      run: |
-        echo input is truthy
+    name: check value
+    runs-on: ubuntu-latest
 
-    - if: ${{ github.event.inputs.value == false }}
-      run: |
-        echo input is falsy
+    steps:
+      - if: ${{ github.event.inputs.value == true }}
+        run: |
+          echo input is truthy
+
+      - if: ${{ github.event.inputs.value == false }}
+        run: |
+          echo input is falsy
