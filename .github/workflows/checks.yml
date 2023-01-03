@@ -14,6 +14,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: always truthy step
+        if: true
+        run: |
+          echo foobar
+      - name: alway falsy step
+        if: false
+        run: |
+          echo foobar
+
       - if: ${{ github.event.inputs.value == true }}
         run: |
           echo input is truthy
