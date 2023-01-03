@@ -24,10 +24,10 @@ jobs:
         run: |
           echo foobar
 
-      - if: ${{ github.event.inputs.value }}
+      - if: ${{ github.event.inputs.value == 'true' }}
         run: |
           echo input is truthy
 
-      - if: ${{ ! github.event.inputs.value }}
+      - if: ${{ github.event.inputs.value == 'false' }}
         run: |
           echo input is falsy
